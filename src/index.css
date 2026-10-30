@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Be Vietnam Pro", "Inter Variable", system-ui, sans-serif;
+  --font-figure: "Inter Variable", "Be Vietnam Pro", system-ui, sans-serif;
+
+  --color-paper: #ffffff;
+  --color-alabaster: #f8fafc;
+  --color-slatefield: #f1f5f9;
+  --color-ink: #0f172a;
+  --color-inkdeep: #052e2b;
+  --color-muted: #64748b;
+  --color-line: #e2e8f0;
+
+  --color-safe: #10b981;
+  --color-safedark: #047857;
+  --color-warn: #f59e0b;
+  --color-amberink: #b45309;
+  --color-alarm: #dc2626;
+  --color-gps: #2563eb;
+
+  --shadow-card: 0 8px 30px rgb(0 0 0 / 0.04);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  button,
+  a.btn,
+  a[class*="min-h-"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.25;
+  }
+
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.hero-title {
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-size: clamp(26px, 5.8vw, 84px);
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    max-width: 1180px;
+    padding: 0 24px;
+    box-sizing: border-box;
+    transform: translate(-50%, calc(-50% - 0.33em));
+  }
+}
+
+figure {
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-safe);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
